@@ -1,0 +1,35 @@
+css object fit
+
+formit.setFieldError("Field-->like email", "value")
+
+@media (max-width: 426px) {
+    .imgForSigninpage {
+        padding-top: 20px;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        object-fit: cover;
+    }
+}
+
+
+task-2
+
+      Toast({ message: error?.response?.data?.message, type: "error" });
+
+
+task-3
+
+  useEffect(() => {
+    if (formik.values.otp.length >= 6) {
+      console.log("yes Otp is greater than 5");
+      setLoading(true);
+      formik.handleSubmit();
+
+    }
+    else {
+      console.log("no");
+      setLoading(false)
+
+    }
+  }, [formik.values.otp.length])

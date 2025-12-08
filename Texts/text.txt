@@ -1,0 +1,108 @@
+font-family: poppins,sans-serif; font-weight:700; background-clip: text; letter-spacing:1px;
+
+ npm create vite@latest FormValidation
+
+
+14px Rialta, "Helvetica Neue"
+mar 5 0
+pad 8 8 8 16
+color #1f3351
+npm create vite@latest FormValidation
+background:#36454f
+margin: 16 0 0 
+pad: 16px
+500
+
+
+
+git init
+git add .
+git commit -m "Daily Updates - commit for  08-12-2025"
+git branch -M main
+git remote add origin https://github.com/williamimmanuelv/Daily-Updates.git
+git push -u origin main
+
+git add .
+git commit -m "task-5 nearly completed"
+git push origin main
+
+  git config --global user.email "williamimmanuelv@gmail.com"
+  git config --global user.name "williamimmanuelv"
+
+
+jquery ajax file uploader
+
+npm install swiper
+npm install yup
+npm install formik
+npm install react-icons
+npm i --save react-drag-drop-files
+npm install primereact
+npm install react-bootstrap bootstrap
+
+material ui
+
+npm install @mui/material @emotion/react @emotion/styled
+
+ant design
+
+npm install antd
+
+
+    npm install react-hook-form yup @hookform/resolvers
+
+
+    setstate(prevState => ({
+      ...prevState,
+      name: "New Name"
+    }));
+
+selector {
+  font-size: clamp(min-font-size, preferred-font-size, max-font-size);
+}
+p {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+
+This ensures that the font size of paragraphs will:
+Never be smaller than 1rem.
+Scale fluidly based on 2.5vw (2.5% of the viewport width) when the viewport size allows.
+Never be larger than 2rem.
+
+const API_URL = "https://webman.co.in/goolok/api/vendor";
+
+
+sikkim
+west Bengal
+Punjab
+Odisha
+Manipur
+Kerala
+
+window
+localStorage
+json stringify
+formic - setfield value
+yup
+minimum and max font size
+svg-path -> view box 	
+react-toastify
+switch case break default
+
+axios ,values, header authorization content-type
+
+css object fit
+
+npm i dayjs
+
+
+{dayjs(order?.updated_at).format(
+  "Do MMMM YYYY, hh:mma"
+)}
+
+
+
+
+
+

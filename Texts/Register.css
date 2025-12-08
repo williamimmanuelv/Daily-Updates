@@ -1,0 +1,10 @@
+@media (max-width: 426px) {
+    .imgForRegister {
+        padding-top: 30px;
+        border-radius: 20px;
+        width: 275px;
+        height: 300px;
+        margin: auto;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,17 @@
+prime React 
+
+- data Table
+- dialog pop - !login
+- check box 
+- Calender - !icon
+- stepper - cont1 -> cont2 -> cont3 
+- menubar
+- otp input otp component
+
+
+antd
+
+- carousel
+- image
+- spin
+- tag 

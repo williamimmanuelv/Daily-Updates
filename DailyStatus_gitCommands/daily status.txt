@@ -125,3 +125,22 @@ product list page - language part alteration - ongoing
 17-01-2026
 
 product list page single row data display - rework done , there was a glitch in the ui in all of the orders page - done , in product creation page alter messages is not accurate so reworked
+
+
+19-01-2026
+
+In the master page -> Role creation list shown one set of roles but 
+    the staff management shown different set of roles.
+    - bug fixed
+
+In master Under attribute list ,
+    view model form all details are not shown , 
+    currently  attribute name only shown.
+    - bug fixed
+
+In inventory module Under stock view form not shown all details
+    it currently showing product and stock details.
+    Update all details in stock view form. - completed
+
+Change Language Tab UI in all creation module because when i create in english, 
+    german tab is highlited, create german ,english tab is highlited. - ongoing

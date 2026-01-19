@@ -1,0 +1,41 @@
+import { useState } from "react";
+import { Dropdown } from "primereact/dropdown";
+
+export default function SortDropdown({ handleSort, setFiltercategories }) {
+  const [selectedSort, setSelectedSort] = useState(null);
+
+  const sortOptions = [
+    { label: "Price: Low to High", value: "lowtohigh" },
+    { label: "Price: High to Low", value: "hightolow" },
+    { label: "Newest", value: "newest" },
+  ];
+
+  const onSortChange = (e) => {
+    setSelectedSort(e.value);
+    handleSort(e.value);
+  };
+
+  return (
+    <div className="d-flex gap-3 justify-content-between justify-content-lg-end right-div">
+
+      {/* Mobile Filter Button */}
+      <div className="d-block d-lg-none">
+        <button
+          className="btn btn-outline-secondary phoneFilterBtn"
+          onClick={() => setFiltercategories(true)}
+        >
+          Filter
+        </button>
+      </div>
+
+      {/* PrimeReact Sort Dropdown */}
+      <Dropdown
+        value={selectedSort}
+        options={sortOptions}
+        onChange={onSortChange}
+        placeholder="Sort By"
+        className="sortbtnForcss"
+      />
+    </div>
+  );
+}

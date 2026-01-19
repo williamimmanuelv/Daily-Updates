@@ -32,6 +32,9 @@ git push origin main
 
 jquery ajax file uploader
 
+//////////   packages  /////////////
+
+
 npm install swiper
 npm install yup
 npm install formik
@@ -102,6 +105,8 @@ npm i dayjs
 )}
 
 
+-- to force npm install
+npm install --force
 
 
 

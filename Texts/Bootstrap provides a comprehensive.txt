@@ -47,7 +47,20 @@ Examples:
 
 These classes offer a flexible and efficient way to manage the spacing of elements within your Bootstrap layouts. 
 
-AI responses may include mistakes.
 
-[1] https://getbootstrap.com/docs/4.0/utilities/spacing/
+
+sm → ≥576px  
+md → ≥768px  
+lg → ≥992px  
+xl → ≥1200px  
+xxl → ≥1400px
+
+
+
+
+
+
+
+
+
 

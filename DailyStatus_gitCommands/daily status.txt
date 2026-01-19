@@ -1,0 +1,127 @@
+
+invoice js - dynamic language - changing - downloadable pdf file - status - completed
+product page - total item section didn't work properly after integrating language , task was to identify the bug and solve it - status completed
+home page - our product-section and - cards - alignment - status - completed 
+product page - after integrating language there was a alignment issue - status completed
+wishlist js/css and wishlistprofile js/css - instock and add to cart button modifing- status - competed
+
+
+26-12
+
+home page - because of language implementation ,in responsive, task was to redesign the products section , every caraousel section,add to cart section ,
+ out of stock section etc designed multiple version until its right.moved add to cart sec to image sec to get space and removed text in both languages , disabled laptop version sections and created only for mobile version
+
+quantitybtn page - altered to set perfect for the responsive 
+wishlist page js/css - language implementation made every card section worse, so altered wishlist part and our recommendation part to set the perfect 
+for the mobile responsive - compelted
+homepage - cards and carusel responsive alteredx - altered flash deal sec- category sec - completed
+add to cart page - pending
+
+
+29-12-2025
+
+completed - 
+wishlist page - to disable the out of stock in mobile response and integrate previously updated quantitybtn into this section and in quantity button 
+itself showing the out of status block
+wishlist page - our recommendation section - products cards - mobile responsive updated
+cart page - products you might like section - cards - mobile responsive updated
+add to cart page - related products - cards mobile responsive updated
+footer page - fonts are reduced
+few other small changes also done
+
+
+30-12-2025
+
+sidebar - choose language page - redisgned for laptop and for responsive
+products page - total items section removed unnessasary css and altered properly 
+home page - banners and our category images titles re alter for responsive
+addtocart page - task is to identify problem the why the cart is not updated when we click add to cart btn and updated on price details section
+problem has been identified and altered but there is another problem occurred multiple rerender happening - so it will be corrected pending
+
+
+
+
+31-12-2025
+
+exchanged code 
+task was to go through admin page - code review
+
+
+02-01-2025
+
+payment-failed and payment-succuess page dynamic language done.
+some other ui changes in multiple pages
+task was to go through 
+
+
+03-01-2026
+
+invoice page - language change - added extra data
+sidebar page - profile section edit and add new addres section responsive 
+profile - myorders page - there was a ui error happened in the responsive 
+address management page - responsive
+
+
+05-01-2026
+
+task was to find out why in dialog(pop ups) -when we scroll the dialog its scrolling but after it ends the background pages starts to scroll.
+founded that's because its a package (prime react) bug and sorted out that in pages like
+address page, profileedit page , profilelabel page,track order page
+
+in header the history are not showing in the search bar then founded that the data's that's coming from the backend are different then
+corrected tha
+after click the suggections in the search bar the filter is not worked only in the responsive mode then corrected that one using useref
+
+in add to cart page select your payment - paypal dialog resized for responsive
+
+in footer page in a particular responsive the social media icons aren't in the right size , resized it.
+removed an icon and replaced with the proper one.
+
+06-01-2026
+
+task - to bring the exact gap as same as category cards to products and flash cards section
+and increase the number of cards to 3 in the products section after 768 responsive - done
+kt done for admin 
+
+
+
+
+
+07-01-2026
+
+task was to find why the edit section is not working and why the datas are not visible in dynamic language mode in attribute pages - completed
+task was to add another section called languagepending to display pending language and edit to navigate to product edit page - completed
+adding notification bell and add how many products are pending language - completed
+herobanner - language section - ongoing
+
+
+08-01-2026
+
+banner image section - app - advertis 1,2,3,4 pages background, footer, herobanner pages dynamic languages edit, delete , add section reworked
+web - advertising,hero,promoting banners pages dynamic languages edit, delete , add section reworked
+bulk upload reworking 
+
+09-01-2026
+
+complete bulk upload reworked - from empty excel download to filling the excel and viewing the datas from the uploaded excel and filtering it wheather 
+it is duplicate or not and deleting it from the data table and implementing edit feature 
+
+12-01-2026
+
+manage order - pickup section - bulk order rework ongoing
+
+
+William@gharuda.co.in
+=!nx{ezg!=rS(9ff
+dailystatus@gharuda.com
+deva@gharuda.com
+
+
+12-01-2026
+
+manage order section - delivery order , pickup and cancelled order pages filter added for each sections like delivery, orderplaced, packed etc
+product list page - language part alteration - ongoing
+
+17-01-2026
+
+product list page single row data display - rework done , there was a glitch in the ui in all of the orders page - done , in product creation page alter messages is not accurate so reworked

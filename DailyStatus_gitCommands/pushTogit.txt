@@ -1,0 +1,26 @@
+git config --global user.name "williamimmanuelv"
+git config --global user.email "williamimmanuelv@gmail.com"
+
+
+git branch -M main
+git remote add origin https://github.com/williamimmanuelv/admin_1.git
+git push -u origin main
+ls
+get init
+git status
+git add .
+git commit -m "Initial commit: React project setup admin"
+git push -u origin main
+git config --global user.name "williamimmanuelv"
+git config --global user.email "williamimmanuelv@gmail.com"
+git config --global --list
+git add .
+git commit -m "Initial commit: React project setup admin"
+git branch -M main
+git remote add origin https://github.com/williamimmanuelv/admin_1.git
+git push -u origin main
+
+git status
+git add .
+git commit -m "Configure project structure and assets"
+git push

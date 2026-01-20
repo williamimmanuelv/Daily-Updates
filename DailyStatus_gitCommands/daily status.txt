@@ -144,3 +144,23 @@ In inventory module Under stock view form not shown all details
 
 Change Language Tab UI in all creation module because when i create in english, 
     german tab is highlited, create german ,english tab is highlited. - ongoing
+
+20-01-2026
+    After create flash deal when i edit the flash deal ,
+    select product and categorydoes not auto fetched. 
+    - completed
+
+    Change Language Tab UI in all creation module because when i create in english,
+    german tab is highlited, create german ,english tab is highlited.
+    - completed
+
+    In the pickup & Delivery module, the status dropdown is showing only forward options
+    but it currently showing backward options also.
+    - completed
+
+    After the product is fully picked up and delivered, cancel option not shown in status
+    dropdown in pickedup & delivered module but it currently showing.
+    - completed
+
+    product listing page - single row language data showing and added view for dynamic languages
+    - completed

@@ -164,3 +164,12 @@ Change Language Tab UI in all creation module because when i create in english,
 
     product listing page - single row language data showing and added view for dynamic languages
     - completed
+
+21-01-2026
+    we list products in single row to achieve this we changed the api of products 
+    because of this severel pages have been not able map properly identified some of them and corrected them
+
+    bulk upload = we only validated the product name , if the product name is pre existed in the 
+    api and we won't allow the datas now setted the valiedation for excel data while uploading
+
+    while creating product there this no preview for thumbnail image now setted for that also.

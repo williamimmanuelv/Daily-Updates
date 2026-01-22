@@ -177,3 +177,4 @@ Change Language Tab UI in all creation module because when i create in english,
 22-01-2026
     tts website kt - done 
     ui overflow - pickup and delivery delivery pages - fixed 
+    flash deals edit - error- fixed

@@ -173,3 +173,7 @@ Change Language Tab UI in all creation module because when i create in english,
     api and we won't allow the datas now setted the valiedation for excel data while uploading
 
     while creating product there this no preview for thumbnail image now setted for that also.
+
+22-01-2026
+    tts website kt - done 
+    ui overflow - pickup and delivery delivery pages - fixed 

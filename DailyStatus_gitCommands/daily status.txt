@@ -187,3 +187,12 @@ Change Language Tab UI in all creation module because when i create in english,
     bulk upload - invalid datas and row show in alert 
     - completed
 
+24-01-2026
+    implemented clear feature in filter section
+    - completed
+    buld upload after succuessfull upload - data clear 
+    - completed
+    ui changes in filter section
+    - completed
+
+

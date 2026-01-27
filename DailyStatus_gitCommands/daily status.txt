@@ -195,4 +195,9 @@ Change Language Tab UI in all creation module because when i create in english,
     ui changes in filter section
     - completed
 
-
+27-02-2026
+    changed Editors from editing paging - because its throughs infinite loop
+    bulk upload validation errors in dialog 
+    buld upload excel download error - fixed
+    shop / billingaddress page add section bug fixed
+    Added Product preview image - in product edit section

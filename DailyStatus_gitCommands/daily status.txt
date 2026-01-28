@@ -201,3 +201,8 @@ Change Language Tab UI in all creation module because when i create in english,
     buld upload excel download error - fixed
     shop / billingaddress page add section bug fixed
     Added Product preview image - in product edit section
+28-02-2026
+    product create / list - image & thumnails preview
+ 
+    multiple alteration had been done in bulk upload
+ 

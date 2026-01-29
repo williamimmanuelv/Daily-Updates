@@ -205,4 +205,13 @@ Change Language Tab UI in all creation module because when i create in english,
     product create / list - image & thumnails preview
  
     multiple alteration had been done in bulk upload
- 
+
+29-01-2026 
+    two of the bugs from the bugs excel file - completed
+    bulk upload validation pdf download
+    banner - web/app create placeholder/error texts etc changed
+
+
+
+    Middle eastern desert night
+     - 8 hours I am uplading  video for this topic in yputube give description antags an

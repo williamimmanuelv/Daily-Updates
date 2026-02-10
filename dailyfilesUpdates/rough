@@ -1,0 +1,213 @@
+Alright — blunt truth.
+
+Your font **is working exactly as coded**.
+Your problem is that you **never applied it anywhere**.
+
+You loaded the font → good.
+You defined weights → good.
+You used it in the page → nowhere.
+
+So the browser falls back to default fonts.
+
+---
+
+## What’s broken (root issues)
+
+### 1️⃣ No global font-family applied
+
+You declared:
+
+```css
+@font-face {
+    font-family: 'exo_2';
+}
+```
+
+But you never did:
+
+```css
+body {
+    font-family: 'exo_2', sans-serif;
+}
+```
+
+Without that, nothing changes.
+
+---
+
+### 2️⃣ Bootstrap is overriding you
+
+Bootstrap sets fonts globally:
+
+```css
+body {
+  font-family: system-ui, -apple-system, ...
+}
+```
+
+If your CSS loads **before** Bootstrap or without override strength, Bootstrap wins.
+
+Your CSS is after Bootstrap (good)… but you still didn’t apply the font.
+
+---
+
+### 3️⃣ Your font paths are probably wrong
+
+You wrote:
+
+```css
+src: url('fonts/Exo_2/static/Exo2-Regular.ttf')
+```
+
+But your CSS file is in root:
+
+```
+style.css
+fonts/
+```
+
+If your structure is:
+
+```
+/style.css
+/fonts/Exo_2/...
+```
+
+Then path is fine.
+
+If instead:
+
+```
+/css/style.css
+/fonts/Exo_2/...
+```
+
+Then path must be:
+
+```css
+../fonts/Exo_2/static/Exo2-Regular.ttf
+```
+
+If the path is wrong → font silently fails.
+
+Check DevTools → Network → Fonts.
+
+---
+
+## Fix (minimum working solution)
+
+Add this at the **bottom** of your CSS:
+
+```css
+body {
+    font-family: 'exo_2', sans-serif;
+}
+```
+
+If you want headings bold:
+
+```css
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'exo_2', sans-serif;
+    font-weight: 700;
+}
+```
+
+---
+
+## Cleaner @font-face setup (yours is messy)
+
+You don’t need 3 declarations unless you’re actually using them.
+
+Do this instead:
+
+```css
+@font-face {
+    font-family: 'Exo2';
+    src: url('./fonts/Exo_2/static/Exo2-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Exo2';
+    src: url('./fonts/Exo_2/static/Exo2-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+```
+
+Then apply:
+
+```css
+body {
+    font-family: 'Exo2', sans-serif;
+}
+```
+
+---
+
+## Common mistakes you might also be making
+
+Check these before blaming CSS:
+
+* Font files actually exist
+* No 404 errors in DevTools
+* CSS file linked correctly
+* Cache cleared (hard refresh)
+* Font name spelled exactly the same
+
+You used:
+
+```
+'exo_2'
+```
+
+If you apply:
+
+```
+font-family: 'Exo2';
+```
+
+It won’t work. Names must match.
+
+---
+
+## Quick diagnostic test
+
+Add this temporarily:
+
+```css
+body {
+    font-family: 'exo_2', sans-serif !important;
+}
+```
+
+If font changes → Bootstrap override issue solved.
+
+If not → path / loading issue.
+
+---
+
+## Reality check on your code quality
+
+Since you want brutal feedback:
+
+* Inline styles everywhere → amateur
+* Repeated height hardcoding → fragile layout
+* SVGs positioned absolute → will break responsive
+* No responsive grid fallback → mobile risk
+* Font-face overkill → unnecessary weight
+
+Your page “works”… but it’s not production clean.
+
+---
+
+If you want, I’ll:
+
+* Fix font loading properly
+* Convert inline styles → CSS classes
+* Make cards responsive
+* Optimize grid for mobile
+
+Right now you’re building visually…
+
+…but structurally it’s duct tape.

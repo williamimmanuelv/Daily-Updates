@@ -1,0 +1,213 @@
+You’re basically trying to embed a **Google Map with a pinned business card** inside React like the screenshot.
+
+There are 3 ways to do it. Only one of them is “proper” depending on what you need.
+
+---
+
+# 1️⃣ Quick & Dirty (Iframe embed) — easiest
+
+If all you need is a static map with the pin + info popup, don’t overengineer it.
+
+### Steps
+
+1. Go to Google Maps
+2. Search your business
+3. Click **Share → Embed a map → Copy HTML**
+4. Use it inside React
+
+### React Component
+
+```jsx
+import React from "react";
+
+const MapEmbed = () => {
+  return (
+    <div style={{ width: "100%", height: "450px" }}>
+      <iframe
+        title="Gharuda Infotech Location"
+        src="https://www.google.com/maps?q=Gharuda+Infotech+Pvt+Ltd,+Chennai&output=embed"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  );
+};
+
+export default MapEmbed;
+```
+
+✔ Shows pin
+✔ Shows business card on click
+❌ No customization
+❌ No programmatic control
+
+Use this if you just need display.
+
+---
+
+# 2️⃣ Proper React Integration (Google Maps JS API)
+
+If you want:
+
+* Custom marker
+* Custom popup
+* Dynamic locations
+* Styling
+
+Then you use the API.
+
+---
+
+## Install library
+
+```bash
+npm install @react-google-maps/api
+```
+
+---
+
+## Basic Map with Marker + InfoWindow
+
+```jsx
+import React, { useState } from "react";
+import {
+  GoogleMap,
+  LoadScript,
+  Marker,
+  InfoWindow,
+} from "@react-google-maps/api";
+
+const containerStyle = {
+  width: "100%",
+  height: "450px",
+};
+
+const center = {
+  lat: 13.0615,   // Chennai approx
+  lng: 80.2420,
+};
+
+const MapComponent = () => {
+  const [showInfo, setShowInfo] = useState(false);
+
+  return (
+    <LoadScript googleMapsApiKey="YOUR_API_KEY">
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
+        
+        <Marker
+          position={center}
+          onClick={() => setShowInfo(true)}
+        />
+
+        {showInfo && (
+          <InfoWindow
+            position={center}
+            onCloseClick={() => setShowInfo(false)}
+          >
+            <div>
+              <h3>Gharuda Infotech Pvt Ltd</h3>
+              <p>
+                2nd Floor, 129, Valluvarkottam High Rd,  
+                Nungambakkam, Chennai
+              </p>
+              <p>⭐ 3.3 (9 reviews)</p>
+            </div>
+          </InfoWindow>
+        )}
+
+      </GoogleMap>
+    </LoadScript>
+  );
+};
+
+export default MapComponent;
+```
+
+---
+
+## Get API Key
+
+1. Go to Google Cloud Console
+2. Enable **Maps JavaScript API**
+3. Create credentials → API key
+4. Restrict it to your domain
+
+Without this, map won’t load.
+
+---
+
+# 3️⃣ Business Card Like Screenshot (Places API)
+
+The popup in your screenshot is not manual text.
+
+That card comes from **Google Places data**.
+
+If you want auto-fetched:
+
+* Reviews
+* Rating
+* Address
+* Photos
+
+You must use:
+
+👉 Places API + Place ID
+
+---
+
+### Example flow
+
+1. Get Place ID from Maps
+2. Fetch details
+
+```js
+const service = new google.maps.places.PlacesService(map);
+
+service.getDetails(
+  { placeId: "YOUR_PLACE_ID" },
+  (place, status) => {
+    console.log(place);
+  }
+);
+```
+
+Then render inside InfoWindow.
+
+This is the only way to replicate the real Google card dynamically.
+
+---
+
+# When to use what
+
+| Use case                | Method      |
+| ----------------------- | ----------- |
+| Just show location      | Iframe      |
+| Custom marker + popup   | Maps JS API |
+| Real business data card | Places API  |
+
+---
+
+# Common mistakes (React devs keep screwing this up)
+
+* Forgetting to enable billing → map blocked
+* Using API key in frontend without restriction
+* Re-rendering map every state change
+* Wrong lat/lng order
+* Not setting container height → map invisible
+
+If your map is blank, it’s almost always one of these.
+
+---
+
+If you want, next step I can give you:
+
+* Dark theme styled map
+* Multiple markers from DB
+* Auto-fit bounds
+* Cluster markers
+
+Say which direction you’re going.

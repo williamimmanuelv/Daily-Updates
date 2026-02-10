@@ -42,6 +42,7 @@ npm install react-icons
 npm i --save react-drag-drop-files
 npm install primereact
 npm install react-bootstrap bootstrap
+svg wave generator
 
 material ui
 

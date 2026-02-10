@@ -1,0 +1,30 @@
+To process HTTP  or  methods in a Java application and interact with a MySQL database, you typically use a web framework like Spring Boot and a persistence library like JPA or Hibernate. [1, 2, 3, 4]  
+The process involves several key steps: 
+1. Front-end Request 
+The front-end sends an HTTP request to a specific endpoint defined on your back-end server. For example: 
+
+•  (to create a new user) 
+•  (to remove a user by their ID) [7, 8]  
+
+2. Back-end Controller 
+In Java, a controller class handles these incoming HTTP requests using annotations provided by your web framework (e.g., Spring MVC/Spring Boot). 
+
+• : This annotation maps the request to a specific Java method that will process the data sent by the client. 
+• : This annotation maps the request used for removing resources. [13, 14, 15, 16]  
+
+3. Service Layer 
+The controller passes the data or request to a service layer. This layer contains the business logic and orchestrates the database operations. [17, 18, 19, 20, 21]  
+4. Persistence Layer (JPA/Hibernate) 
+The service layer interacts with the database via a repository interface. Frameworks like Spring Data JPA automatically generate the necessary SQL queries based on simple method names (like  or ). 
+
+• You configure your application with the JDBC driver details to connect to MySQL (username, password, URL). 
+• JPA handles the SQL translation automatically. [27, 28, 29, 30, 31]  
+
+Summary 
+
+| Step [32, 33, 34] | Method | Java Component | Function | MySQL Interaction  |
+| --- | --- | --- | --- | --- |
+| 1 | / | Front-end Request | Initiates action | —  |
+| 2 | / | Controller | Receives request, delegates | —  |
+| 3 | Service Method | Service Layer | Business logic | —  |
+| 4 | / | Repository (JPA) | Executes operation | Inserts/Deletes records  |

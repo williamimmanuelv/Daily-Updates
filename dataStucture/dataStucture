@@ -1,0 +1,144 @@
+to indicate the speed of the data we use big O 
+
+four speed timer
+    - n2 O(n2)
+    - n O(n)
+    - logn O(logn)
+    - 1 O(1)
+
+array three operations
+    - Insertion
+    - deletion
+    - searching
+    - trarersal
+
+|7|4|5|
+
+7 --> milky bar
+4 --> kit kat
+5 --> snikers
+
+Big O of 1 --> O(1)
+
+Big O means -
+    the set of data that we have and while we increase and decrease the data do the time is increaing or  decreasing that's called BIG O
+
+big O(1) --> while increase the data time stays constant
+big O(n) --> while increase the data the timing also increases
+big O(n2)
+
+O(1) --> constant time
+O(n) --> linear time
+O(n2) --> quadratic time
+
+01 -->  Big O of 1 --> O(1)
+insertion -
+
+    It doesn't depend on number of data you have 
+
+    for example if we a have a data and when we change the data by increasing or decreasing the data and the timing is constant its called BIG O OF 1
+
+    
+
+deletion -
+
+    - we have to search for one thing or one condition only
+        do the data have same name and we alter that (increase or decrease) so it doesn't need much time
+
+    - This is also does the same - we already have the data and we find that and delete the data
+
+    - So its speed is BIG O OF 1
+
+02 -->  Big O of n --> O(n)
+
+searching -
+
+    - for searching we need to check two conditions
+
+    let's say we are search which box has highest data count
+        - first we'll be starting from first box and we store the data name and data count , then we'll go to next box and compare the count with the previous one and we count the data and same for the next 
+        - now we'll be comparing the counting at the same time and we'll be entering all the data for that
+
+    for example - 
+        
+            if we've 10 data time will take 10 sec but if we've 100 data the time will increase and it'll become 100 sec . Now this is not a constant time and its always changing based on the data and the requirement for the search
+
+
+    here, time is linear
+
+
+    check the first box then check the second box then third to find the desired data - this is called linear search 
+
+
+03 --> Big O of n2 --> O(n2)
+
+    formula --> nx(n-1)/2
+
+        if I hand shake with 2 person how many handshakes are happened three hand but two hand shakes 
+
+        lets go little further 
+
+        - if there is 10 person including me how many hand shakes are there?  10! no
+
+        for that we need to caculate or we need a formula 
+            - formula is nx(n-1)/2
+
+            now lets do the math
+            
+            1x(10-1)
+            10 - 1 = 9
+
+            10x(10-1)/2
+
+            100-10
+            90/2 = 45
+
+        so,
+            if n = 3 (3x(3-1)/2) the answer is 3,
+            if n = 5 (5x(5-1)/2) the answer is 10
+            if n = 10 (10x(10-1)/2) the answer is 45
+
+        the number increases super fast
+            
+
+
+
+
+04 --> Big O of logn --> O(log2)
+
+    log means divided by 2
+
+    explaination -
+         Lets say we open a dictionary with a word helicoptor in our mind and we ended up on the middle of the C letter then we won't be turning back to A,B,C we'll be turning the pages in forword.
+         So , let's say that means we'll be dividing the actual thing with the 2.
+
+Process of measuring the speed and efficiency are an alogorithm is called time complexity.
+
+
+Process of measuring the speed of datastructure or  algorithm is called time complexity
+
+
+
+
+    check the first box then check the second box then third to find the desired data - this is called linear search 
+    this linear search is called algorithm
+
+
+Start by learning these types of data structures
+
+    - Array
+    - Stacks
+    - Queues
+    - Linked Lists
+
+
+Algorithms
+
+    - Linear Search 
+    - Binary Search
+    - Bubble Sort
+    - Selection Sort
+
+
+
+Identify and highlight properly which of the sentencess are correct and which of the lines or not , grammatically and everything and analyse my knowledge in eng and math and data structure (just learnt the basics through youtube course) to the scale of 10 .Tell how and in what exactly I have to increase my knowledge.

@@ -1,213 +1,301 @@
-You’re basically trying to embed a **Google Map with a pinned business card** inside React like the screenshot.
+Good — you actually gave the code. Now we can stop guessing and start cutting into what’s wrong.
 
-There are 3 ways to do it. Only one of them is “proper” depending on what you need.
+Short version: **Your controller is fine. Your JSON is fine. Lombok is fine.**
+So if you’re still getting `{}` + NULL columns → the problem is somewhere else in the binding / persistence chain.
+
+Let’s stress-test this properly.
 
 ---
 
-# 1️⃣ Quick & Dirty (Iframe embed) — easiest
+# 🔎 First — What Should Happen With Your Code
 
-If all you need is a static map with the pin + info popup, don’t overengineer it.
+Given:
 
-### Steps
-
-1. Go to Google Maps
-2. Search your business
-3. Click **Share → Embed a map → Copy HTML**
-4. Use it inside React
-
-### React Component
-
-```jsx
-import React from "react";
-
-const MapEmbed = () => {
-  return (
-    <div style={{ width: "100%", height: "450px" }}>
-      <iframe
-        title="Gharuda Infotech Location"
-        src="https://www.google.com/maps?q=Gharuda+Infotech+Pvt+Ltd,+Chennai&output=embed"
-        width="100%"
-        height="100%"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
-  );
-};
-
-export default MapEmbed;
+```java
+@PostMapping("/addStudent")
+public Student postDetails(@RequestBody Student student) {
+    System.out.println(student);
+    return studentService.saveDetails(student);
+}
 ```
 
-✔ Shows pin
-✔ Shows business card on click
-❌ No customization
-❌ No programmatic control
+And JSON:
 
-Use this if you just need display.
-
----
-
-# 2️⃣ Proper React Integration (Google Maps JS API)
-
-If you want:
-
-* Custom marker
-* Custom popup
-* Dynamic locations
-* Styling
-
-Then you use the API.
-
----
-
-## Install library
-
-```bash
-npm install @react-google-maps/api
+```json
+{
+  "mark": 44,
+  "name": "asdfa"
+}
 ```
 
----
+Spring should create:
 
-## Basic Map with Marker + InfoWindow
-
-```jsx
-import React, { useState } from "react";
-import {
-  GoogleMap,
-  LoadScript,
-  Marker,
-  InfoWindow,
-} from "@react-google-maps/api";
-
-const containerStyle = {
-  width: "100%",
-  height: "450px",
-};
-
-const center = {
-  lat: 13.0615,   // Chennai approx
-  lng: 80.2420,
-};
-
-const MapComponent = () => {
-  const [showInfo, setShowInfo] = useState(false);
-
-  return (
-    <LoadScript googleMapsApiKey="YOUR_API_KEY">
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
-        
-        <Marker
-          position={center}
-          onClick={() => setShowInfo(true)}
-        />
-
-        {showInfo && (
-          <InfoWindow
-            position={center}
-            onCloseClick={() => setShowInfo(false)}
-          >
-            <div>
-              <h3>Gharuda Infotech Pvt Ltd</h3>
-              <p>
-                2nd Floor, 129, Valluvarkottam High Rd,  
-                Nungambakkam, Chennai
-              </p>
-              <p>⭐ 3.3 (9 reviews)</p>
-            </div>
-          </InfoWindow>
-        )}
-
-      </GoogleMap>
-    </LoadScript>
-  );
-};
-
-export default MapComponent;
+```java
+Student(id=0, mark=44, name=asdfa)
 ```
 
----
+Then JPA inserts row with mark + name.
 
-## Get API Key
+If DB shows NULL → one of these is breaking:
 
-1. Go to Google Cloud Console
-2. Enable **Maps JavaScript API**
-3. Create credentials → API key
-4. Restrict it to your domain
+1. JSON not binding
+2. Object getting nulled before save
+3. JPA mapping mismatch
+4. Lombok not working at runtime
+5. Wrong request actually hitting backend
 
-Without this, map won’t load.
-
----
-
-# 3️⃣ Business Card Like Screenshot (Places API)
-
-The popup in your screenshot is not manual text.
-
-That card comes from **Google Places data**.
-
-If you want auto-fetched:
-
-* Reviews
-* Rating
-* Address
-* Photos
-
-You must use:
-
-👉 Places API + Place ID
+Let’s go layer by layer.
 
 ---
 
-### Example flow
+# ✅ Step 1 — Check Console Output (Critical)
 
-1. Get Place ID from Maps
-2. Fetch details
+You already added:
 
-```js
-const service = new google.maps.places.PlacesService(map);
-
-service.getDetails(
-  { placeId: "YOUR_PLACE_ID" },
-  (place, status) => {
-    console.log(place);
-  }
-);
+```java
+System.out.println(student);
 ```
 
-Then render inside InfoWindow.
+What does it print?
 
-This is the only way to replicate the real Google card dynamically.
+### Case A
 
----
+```
+Student(id=0, mark=0, name=null)
+```
 
-# When to use what
+→ JSON binding failed.
 
-| Use case                | Method      |
-| ----------------------- | ----------- |
-| Just show location      | Iframe      |
-| Custom marker + popup   | Maps JS API |
-| Real business data card | Places API  |
+### Case B
 
----
+```
+Student(id=0, mark=44, name=asdfa)
+```
 
-# Common mistakes (React devs keep screwing this up)
+→ Binding works → problem is in Service/Repository/DB mapping.
 
-* Forgetting to enable billing → map blocked
-* Using API key in frontend without restriction
-* Re-rendering map every state change
-* Wrong lat/lng order
-* Not setting container height → map invisible
-
-If your map is blank, it’s almost always one of these.
+Don’t skip this. This single line tells us where the bug lives.
 
 ---
 
-If you want, next step I can give you:
+# ✅ Step 2 — Your Entity Mapping (There’s a Subtle Risk)
 
-* Dark theme styled map
-* Multiple markers from DB
-* Auto-fit bounds
-* Cluster markers
+You wrote:
 
-Say which direction you’re going.
+```java
+@GeneratedValue
+private int id;
+```
+
+You did NOT specify strategy.
+
+Depending on DB, this can misbehave.
+
+Fix it explicitly:
+
+```java
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private int id;
+```
+
+Especially for MySQL — IDENTITY is the safe default.
+
+---
+
+# ✅ Step 3 — Primitive Types Can Hide Binding Failures
+
+You used:
+
+```java
+private int mark;
+```
+
+If binding fails, primitives default to `0`, not `null`.
+
+So you can’t tell if JSON came or not.
+
+Switch to wrapper:
+
+```java
+private Integer mark;
+```
+
+Now if binding fails → it’ll be `null` → easier debugging.
+
+---
+
+# ✅ Step 4 — Verify Service Layer Isn’t Nuking Data
+
+You didn’t paste `StudentService`.
+
+If you wrote something like:
+
+```java
+public Student saveDetails(Student student) {
+    Student s = new Student();
+    return repo.save(s);
+}
+```
+
+Congrats — you just saved an empty object.
+
+Correct service should be:
+
+```java
+public Student saveDetails(Student student) {
+    return studentRepository.save(student);
+}
+```
+
+No remapping. No new object creation.
+
+---
+
+# ✅ Step 5 — DB Column Names vs Hibernate Naming
+
+You mapped:
+
+```java
+@Column(name="ST_MARK")
+private int mark;
+
+@Column(name="NAME")
+private String name;
+```
+
+Check MySQL table:
+
+```sql
+DESC student_table;
+```
+
+If columns are actually:
+
+```
+mark
+name
+```
+
+—not `ST_MARK` / `NAME` — Hibernate will insert NULL because mapping doesn’t match.
+
+Either:
+
+### Fix DB
+
+```sql
+ST_MARK
+NAME
+```
+
+OR simplify entity:
+
+```java
+private int mark;
+private String name;
+```
+
+Let Hibernate auto-map.
+
+---
+
+# ✅ Step 6 — Confirm You’re Hitting the Right Endpoint
+
+Test this:
+
+Change method temporarily:
+
+```java
+@PostMapping("/addStudent")
+public String test(@RequestBody Student student) {
+    return "HIT: " + student.getName();
+}
+```
+
+If Postman still returns `{}` → you’re not hitting this controller.
+
+Common causes:
+
+* Wrong port
+* Old app still running
+* Multiple services
+* Wrong URL
+
+---
+
+# 🎯 Most Likely Root Causes (Ranked)
+
+Based on your code, probability order:
+
+1. **Service layer saving empty object**
+2. **DB column name mismatch**
+3. Lombok not compiling (rare but happens)
+4. Wrong endpoint hit
+5. Missing IDENTITY strategy (less likely for NULL issue)
+
+`@RequestBody` is already correct — so ignore earlier generic advice.
+
+---
+
+# 🧪 Final Isolation Test (Do This)
+
+Bypass service completely:
+
+```java
+@Autowired
+private StudentRepository repo;
+
+@PostMapping("/addStudent")
+public Student postDetails(@RequestBody Student student) {
+    System.out.println(student);
+    return repo.save(student);
+}
+```
+
+### If this works
+
+→ Your service layer is trash. Fix it.
+
+### If still NULL
+
+→ Mapping / DB schema issue.
+
+---
+
+# 🧠 Mentor Reality Check
+
+Your debugging approach was surface-level:
+
+You saw:
+
+* 200 OK
+* Row inserted
+* NULL columns
+
+…and assumed controller binding.
+
+But your controller is already correct.
+
+Real debugging = isolate layers:
+
+1. Controller binding
+2. Service mutation
+3. Repository save
+4. Hibernate mapping
+5. DB schema
+
+You skipped straight to assumption.
+
+That’s how bugs survive.
+
+---
+
+# If You Want the Exact Kill Shot
+
+Paste:
+
+* `StudentService`
+* `StudentRepository`
+* MySQL `DESC student_table;`
+* Console print output
+
+I’ll pinpoint the failure line — not guess, not theory, exact.

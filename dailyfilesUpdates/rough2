@@ -1,301 +1,295 @@
-Good — you actually gave the code. Now we can stop guessing and start cutting into what’s wrong.
+Perfect 👍 Below is a **complete Bootstrap 5 starter template** for **LexCorp 360** — structured, professional, and ready for expansion.
 
-Short version: **Your controller is fine. Your JSON is fine. Lombok is fine.**
-So if you’re still getting `{}` + NULL columns → the problem is somewhere else in the binding / persistence chain.
+This includes:
 
-Let’s stress-test this properly.
+* ✅ Login Page
+* ✅ Dashboard Layout (Sidebar + Topbar)
+* ✅ KPI Cards
+* ✅ Case Table
+* ✅ Notice Monitoring
+* ✅ Responsive Layout
+* ✅ Clean Legal-Tech UI styling
+
+You can copy this as your base `dashboard.html`.
 
 ---
 
-# 🔎 First — What Should Happen With Your Code
+# 📁 1️⃣ Project Structure
 
-Given:
+```
+lexcorp360/
+│
+├── login.html
+├── dashboard.html
+├── cases.html
+├── notices.html
+├── css/
+│   └── style.css
+└── assets/
+```
 
-```java
-@PostMapping("/addStudent")
-public Student postDetails(@RequestBody Student student) {
-    System.out.println(student);
-    return studentService.saveDetails(student);
+---
+
+# 🔐 2️⃣ login.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LexCorp 360 - Login</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+  <div class="card shadow-lg p-4" style="width: 400px;">
+    <h3 class="text-center mb-3">LexCorp 360</h3>
+    <p class="text-center text-muted">Bridging Banks, NBFCs & Advocates</p>
+
+    <form>
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label>Password</label>
+        <input type="password" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label>Role</label>
+        <select class="form-select">
+          <option>Bank</option>
+          <option>NBFC</option>
+          <option>Advocate</option>
+          <option>Admin</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary w-100">Login</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
+```
+
+---
+
+# 🖥️ 3️⃣ dashboard.html (Main Layout)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LexCorp 360 - Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Top Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <a class="navbar-brand" href="#">LexCorp 360</a>
+
+  <div class="ms-auto d-flex align-items-center">
+    <input class="form-control form-control-sm me-3" type="search" placeholder="Search Cases">
+    <button class="btn btn-outline-light btn-sm">Notifications</button>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Sidebar -->
+    <nav class="col-md-2 d-md-block bg-light sidebar collapse vh-100 p-3">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="cases.html">Cases</a></li>
+        <li class="nav-item"><a class="nav-link" href="notices.html">Notices</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Courts</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
+        <li class="nav-item"><a class="nav-link text-danger" href="login.html">Logout</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+
+      <h2 class="mb-4">Dashboard Overview</h2>
+
+      <!-- KPI Cards -->
+      <div class="row g-3 mb-4">
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h6>Total Cases</h6>
+              <h3>2,548</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h6>Active Notices</h6>
+              <h3>684</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h6>Upcoming Hearings</h6>
+              <h3>73</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h6>Compliance Alerts</h6>
+              <h3 class="text-danger">12</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Table -->
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">Recent Cases</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Case ID</th>
+                <th>Court</th>
+                <th>Advocate</th>
+                <th>Next Hearing</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#LC-1023</td>
+                <td>High Court</td>
+                <td>Adv. Sharma</td>
+                <td>22 Feb 2026</td>
+                <td><span class="badge bg-warning">Upcoming</span></td>
+              </tr>
+              <tr>
+                <td>#LC-1056</td>
+                <td>District Court</td>
+                <td>Adv. Mehta</td>
+                <td>18 Feb 2026</td>
+                <td><span class="badge bg-danger">Critical</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Notice Monitoring -->
+      <div class="card shadow-sm mt-4">
+        <div class="card-header bg-white">
+          <h5>Notice Compliance Monitoring</h5>
+        </div>
+        <div class="card-body">
+
+          <p>SARFAESI Notice - 80% Deadline Used</p>
+          <div class="progress mb-3">
+            <div class="progress-bar bg-danger" style="width: 80%"></div>
+          </div>
+
+          <p>Recovery Notice - 45% Deadline Used</p>
+          <div class="progress">
+            <div class="progress-bar bg-warning" style="width: 45%"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+```
+
+---
+
+# 🎨 4️⃣ css/style.css
+
+```css
+body {
+  font-size: 0.9rem;
+}
+
+.sidebar .nav-link {
+  color: #333;
+  font-weight: 500;
+}
+
+.sidebar .nav-link.active {
+  background-color: #1E3A8A;
+  color: white;
+  border-radius: 5px;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.navbar {
+  background-color: #0F172A !important;
 }
 ```
 
-And JSON:
+---
 
-```json
-{
-  "mark": 44,
-  "name": "asdfa"
-}
-```
+# 🚀 What This Gives You
 
-Spring should create:
+✔ Professional legal-tech layout
+✔ Clean Bootstrap structure
+✔ Expandable for:
 
-```java
-Student(id=0, mark=44, name=asdfa)
-```
-
-Then JPA inserts row with mark + name.
-
-If DB shows NULL → one of these is breaking:
-
-1. JSON not binding
-2. Object getting nulled before save
-3. JPA mapping mismatch
-4. Lombok not working at runtime
-5. Wrong request actually hitting backend
-
-Let’s go layer by layer.
+* Role-based dashboards
+* Case management
+* Notice tracking
+* Product mapping
+* Reporting module
 
 ---
 
-# ✅ Step 1 — Check Console Output (Critical)
+# 🧠 Next Upgrade Options
 
-You already added:
+If you want, I can now provide:
 
-```java
-System.out.println(student);
-```
+* 🔥 Advanced Admin Panel Version
+* 🔥 Modern SaaS UI Version (more premium look)
+* 🔥 Case Management Full Page Template
+* 🔥 Notice Module Complete Template
+* 🔥 Responsive Collapsible Sidebar Version
+* 🔥 Database table structure for backend integration
 
-What does it print?
+Tell me the next step and I’ll build it properly for you.
 
-### Case A
 
-```
-Student(id=0, mark=0, name=null)
-```
-
-→ JSON binding failed.
-
-### Case B
-
-```
-Student(id=0, mark=44, name=asdfa)
-```
-
-→ Binding works → problem is in Service/Repository/DB mapping.
-
-Don’t skip this. This single line tells us where the bug lives.
-
----
-
-# ✅ Step 2 — Your Entity Mapping (There’s a Subtle Risk)
-
-You wrote:
-
-```java
-@GeneratedValue
-private int id;
-```
-
-You did NOT specify strategy.
-
-Depending on DB, this can misbehave.
-
-Fix it explicitly:
-
-```java
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private int id;
-```
-
-Especially for MySQL — IDENTITY is the safe default.
-
----
-
-# ✅ Step 3 — Primitive Types Can Hide Binding Failures
-
-You used:
-
-```java
-private int mark;
-```
-
-If binding fails, primitives default to `0`, not `null`.
-
-So you can’t tell if JSON came or not.
-
-Switch to wrapper:
-
-```java
-private Integer mark;
-```
-
-Now if binding fails → it’ll be `null` → easier debugging.
-
----
-
-# ✅ Step 4 — Verify Service Layer Isn’t Nuking Data
-
-You didn’t paste `StudentService`.
-
-If you wrote something like:
-
-```java
-public Student saveDetails(Student student) {
-    Student s = new Student();
-    return repo.save(s);
-}
-```
-
-Congrats — you just saved an empty object.
-
-Correct service should be:
-
-```java
-public Student saveDetails(Student student) {
-    return studentRepository.save(student);
-}
-```
-
-No remapping. No new object creation.
-
----
-
-# ✅ Step 5 — DB Column Names vs Hibernate Naming
-
-You mapped:
-
-```java
-@Column(name="ST_MARK")
-private int mark;
-
-@Column(name="NAME")
-private String name;
-```
-
-Check MySQL table:
-
-```sql
-DESC student_table;
-```
-
-If columns are actually:
-
-```
-mark
-name
-```
-
-—not `ST_MARK` / `NAME` — Hibernate will insert NULL because mapping doesn’t match.
-
-Either:
-
-### Fix DB
-
-```sql
-ST_MARK
-NAME
-```
-
-OR simplify entity:
-
-```java
-private int mark;
-private String name;
-```
-
-Let Hibernate auto-map.
-
----
-
-# ✅ Step 6 — Confirm You’re Hitting the Right Endpoint
-
-Test this:
-
-Change method temporarily:
-
-```java
-@PostMapping("/addStudent")
-public String test(@RequestBody Student student) {
-    return "HIT: " + student.getName();
-}
-```
-
-If Postman still returns `{}` → you’re not hitting this controller.
-
-Common causes:
-
-* Wrong port
-* Old app still running
-* Multiple services
-* Wrong URL
-
----
-
-# 🎯 Most Likely Root Causes (Ranked)
-
-Based on your code, probability order:
-
-1. **Service layer saving empty object**
-2. **DB column name mismatch**
-3. Lombok not compiling (rare but happens)
-4. Wrong endpoint hit
-5. Missing IDENTITY strategy (less likely for NULL issue)
-
-`@RequestBody` is already correct — so ignore earlier generic advice.
-
----
-
-# 🧪 Final Isolation Test (Do This)
-
-Bypass service completely:
-
-```java
-@Autowired
-private StudentRepository repo;
-
-@PostMapping("/addStudent")
-public Student postDetails(@RequestBody Student student) {
-    System.out.println(student);
-    return repo.save(student);
-}
-```
-
-### If this works
-
-→ Your service layer is trash. Fix it.
-
-### If still NULL
-
-→ Mapping / DB schema issue.
-
----
-
-# 🧠 Mentor Reality Check
-
-Your debugging approach was surface-level:
-
-You saw:
-
-* 200 OK
-* Row inserted
-* NULL columns
-
-…and assumed controller binding.
-
-But your controller is already correct.
-
-Real debugging = isolate layers:
-
-1. Controller binding
-2. Service mutation
-3. Repository save
-4. Hibernate mapping
-5. DB schema
-
-You skipped straight to assumption.
-
-That’s how bugs survive.
-
----
-
-# If You Want the Exact Kill Shot
-
-Paste:
-
-* `StudentService`
-* `StudentRepository`
-* MySQL `DESC student_table;`
-* Console print output
-
-I’ll pinpoint the failure line — not guess, not theory, exact.

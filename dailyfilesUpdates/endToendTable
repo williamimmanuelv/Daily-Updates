@@ -1,0 +1,103 @@
+Below is a **responsive Bootstrap 5 section** you can paste **right after your previous section (before `</body>`)** to add the **Civil Case Details** table with a clean, modern UI.
+
+It includes:
+
+* Section header
+* Responsive table (`.table-responsive`)
+* Clean styling
+* Badge label
+* Mobile-friendly layout
+
+---
+
+```html
+<!-- Civil Case Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Civil Case Details</h2>
+      <p class="text-muted">Overview of major civil case types relevant in banking and recovery litigation.</p>
+    </div>
+
+    <!-- Responsive Table -->
+    <div class="card shadow-sm border-0 rounded-4">
+      <div class="card-body p-4">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead class="table-primary">
+              <tr>
+                <th>Case Type</th>
+                <th>Stage / Type</th>
+                <th>What it Means</th>
+                <th>Example (Banking Context)</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td><span class="badge bg-primary">Civil Case</span></td>
+                <td><strong>Civil Suit</strong></td>
+                <td>Regular civil suit for recovery / rights</td>
+                <td>Bank files a civil suit to recover ₹50 lakhs from borrower</td>
+              </tr>
+
+              <tr>
+                <td><span class="badge bg-primary">Civil Case</span></td>
+                <td><strong>Summary Suit</strong></td>
+                <td>Fast-track suit where liability is clear</td>
+                <td>Loan agreement + acknowledgment → summary suit under CPC</td>
+              </tr>
+
+              <tr>
+                <td><span class="badge bg-primary">Civil Case</span></td>
+                <td><strong>Against Case</strong></td>
+                <td>Counter case filed by borrower</td>
+                <td>Borrower files suit alleging illegal recovery action</td>
+              </tr>
+
+              <tr>
+                <td><span class="badge bg-primary">Civil Case</span></td>
+                <td><strong>EP (Execution Petition)</strong></td>
+                <td>Enforcement of decree</td>
+                <td>After decree, bank files EP to attach borrower’s property</td>
+              </tr>
+
+              <tr>
+                <td><span class="badge bg-primary">Civil Case</span></td>
+                <td><strong>Insolvency Petition</strong></td>
+                <td>Personal insolvency proceeding</td>
+                <td>Bank files insolvency petition against guarantor</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+```
+
+---
+
+### 🔹 Optional Enhancement Ideas
+
+If you want to make it more SaaS-like:
+
+* Add **search & filter** (DataTables integration)
+* Add **status badges** (Active / Closed / Pending)
+* Add **expandable rows** for detailed legal notes
+* Convert into **accordion-style mobile cards**
+* Add **download to Excel / PDF button**
+
+If you're building this for **banks or NBFC litigation tracking**, I can next design:
+
+* 📊 Civil Case dashboard analytics section
+* 📁 Case lifecycle workflow tracker
+* 🧾 Court-wise performance summary UI
+* ⚖️ Multi-case-type tabbed interface (Civil / DRT / SARFAESI / NCLT)
+
+Tell me your exact use case and I’ll structure it like a real enterprise legal ops product.

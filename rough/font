@@ -1,0 +1,129 @@
+I checked your logic — the main issue is this line inside `showPage()`:
+
+```js
+cards[i].style.display = "block";
+```
+
+Your cards are inside a **flex container**:
+
+```html
+<div id="cardContainer" class="d-flex ...">
+```
+
+And each card is styled using flex:
+
+```css
+#cardContainer .card {
+  flex: 0 0 25%;
+  max-width: 25%;
+  display: flex;
+}
+```
+
+When you change the card to `display: block`, you **break the flex layout**, so Bootstrap/flex behavior stops working correctly — which is why pagination looks like it’s not changing.
+
+---
+
+# ✅ ✅ Fix (Very Important)
+
+Change this line:
+
+```js
+cards[i].style.display = "block";
+```
+
+To this:
+
+```js
+cards[i].style.display = "flex";
+```
+
+So your corrected `showPage()` function becomes:
+
+```js
+function showPage(page) {
+  cards.forEach((card) => {
+    card.style.display = "none";
+  });
+
+  const start = (page - 1) * cardsPerPage;
+  const end = start + cardsPerPage;
+
+  for (let i = start; i < end && i < cards.length; i++) {
+    cards[i].style.display = "flex"; // ✅ FIXED
+  }
+
+  prevBtn.parentElement.classList.toggle("disabled", page === 1);
+  nextBtn.parentElement.classList.toggle("disabled", page === totalPages);
+}
+```
+
+---
+
+# 🔎 Why This Fix Works
+
+Your cards were originally:
+
+```css
+display: flex;
+```
+
+But JavaScript was changing them to:
+
+```css
+display: block;
+```
+
+That breaks:
+
+* `flex: 0 0 25%`
+* equal width layout
+* row alignment
+
+So the layout appears frozen.
+
+---
+
+# 🚀 Even Better (Cleaner Solution)
+
+Instead of hardcoding `"flex"`, you can restore default display like this:
+
+```js
+cards[i].style.display = "";
+```
+
+That way it uses whatever CSS already defines (cleaner approach).
+
+---
+
+# 🧠 Extra Improvement (Optional)
+
+If you want smoother UX, you could add:
+
+```js
+#cardContainer .card {
+  transition: opacity 0.3s ease;
+}
+```
+
+And animate instead of hiding instantly.
+
+---
+
+# 🎯 Final Result
+
+After this change:
+
+* ✅ Next button works
+* ✅ Previous button works
+* ✅ 4 cards per page
+* ✅ Responsive layout stays correct
+
+---
+
+If it still doesn’t work after this change, tell me:
+
+* How many cards total you have
+* What screen size you're testing on
+
+I’ll debug it step-by-step with you.

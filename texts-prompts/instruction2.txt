@@ -1,0 +1,86 @@
+Let me first look at the current Next.js code carefully before making fixes.Now I have a clear picture of all the issues. Let me rewrite all three files with complete fixes:
+
+**Problems identified:**
+1. Canvas coordinates are wrong — `getCanvasPos` divides by `scale` but the canvas is already at native 1920×1080, the scaled wrapper creates a mismatch
+2. Profile images are 140px — too small for YouTube (need ~220px)
+3. Text font sizes too small for video
+4. Empty space — card content not filling the 1920×1080 frame properly
+5. The cross-generation connector goes from wrong elements
+6. Connectors reset to `progress: 0` every render cycle, breaking the draw animation
+7. Missing the bottom timeline bar from the HTML versionNow fully rewrite the canvas engine with
+ correct coordinate math:Now rewrite FamilyCard with bigger images, bigger text, tighter layout:
+Now the complete LineagePage rewrite — fix coordinates, add timeline bar from the HTML version:
+Now package it up:Here's the fixed project. Now the complete step-by-step guide:
+
+---
+
+## 🛠 Step-by-Step: Run the Project
+
+### Step 1 — Install Node.js (if not already)
+Go to **https://nodejs.org** and download the **LTS version**. Install it. Verify:
+```bash
+node --version   # should say v18 or higher
+npm --version
+```
+
+### Step 2 — Extract and install
+```bash
+unzip family-tree-nextjs.zip
+cd family-tree
+npm install
+```
+
+### Step 3 — Generate placeholder images
+```bash
+node scripts/generate-placeholders.js
+```
+This creates temporary silhouette images in `/public/assets/`. Replace them with your real images any time (same filenames).
+
+### Step 4 — Run the website
+```bash
+npm run dev
+```
+Open **http://localhost:3000** in your browser. You'll see the intro screen → click **BEGIN THE LINEAGE**.
+
+---
+
+## 🎬 Step-by-Step: Export to YouTube Video
+
+### Step 5 — Install FFmpeg
+- **Mac:** `brew install ffmpeg`
+- **Windows:** Download from https://ffmpeg.org/download.html → add to PATH
+- **Ubuntu:** `sudo apt install ffmpeg`
+
+Verify: `ffmpeg -version`
+
+### Step 6 — Install Puppeteer
+```bash
+npm install puppeteer
+```
+This downloads a headless Chrome browser (~170MB, one-time).
+
+### Step 7 — Make sure the dev server is running
+```bash
+npm run dev       # keep this terminal open
+```
+
+### Step 8 — Export frames + render video (new terminal)
+```bash
+node scripts/export-frames.js
+```
+This will: capture ~300–400 PNG frames → pipe them to FFmpeg → output `output/family-tree-video.mp4`
+
+### Step 9 — Upload to YouTube
+The output file is already YouTube-optimised: **H.264, 1920×1080, 30fps, 20Mbps, faststart**.
+
+---
+
+## What was fixed in this version
+
+| Issue | Fix |
+|-------|-----|
+| Lines not connecting properly | Rewrote coordinate system — canvas positions now correctly divide by CSS scale |
+| Connector progress resetting | Connectors tracked by stable `id` string, state preserved across re-renders |
+| Too much empty space | Profile images increased from 140px → 220px, text sizes doubled for video |
+| Fonts looked like a website | All font sizes scaled up for 1920×1080 video viewing |
+| Timeline bar missing | Ported the full timeline with dots, names, year labels, and connector lines from the original HTML |

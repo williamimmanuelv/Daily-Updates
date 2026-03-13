@@ -1,0 +1,65 @@
+promt 1 - for the wesite home page -
+
+give me perfect prompt to create html ecommerce website with tailwind css with necessary menus 
+with detailed advance level user  friendly home page with proper navigation .
+ lastly perfect responsive in all devices.
+ for now only for home page . use proper unique image form picsum . 
+it should contain cards carousel etc .this for hardware store if you can take images from the website you should .
+It should look simple at all it should look multi purpose multi dimensional , later we'll be upgrading is to next js so be proper . 
+use proper same styled icons for the page proper header and proper footer. 
+all devicess responsive is neccessary.
+I need at least 20 to  30 section.
+ Just like aos we need animation but not only for the scroll but for every neccessary blocks .
+ add hover , before and after when its required . give me detailed prompt if the anything below 150 lines its not a good prompt . 
+Finally, think harder , think deeper, take your time like a senior devleper.
+ give me proper promt . analyse every requirements of the thousand dollor website and give user friendly and proper. use proper color palette .
+ and give letter to create a  unique logo only using styles . give proper name for the websigte
+
+prompt 2 - for the website subpage and 
+
+
+Home page is created.(FAANG-level)
+Now, give promt for the subpages (all the sub pages take time but detailed) and to convert this complete project into next js . 
+use same detials as home page.The sub page should related to the home don't make them unrelatable.
+In home page increment language change btn profile , If we click the drop down should be there in that there should be 5 languages 
+	1. English 
+	2. tamil
+	3. malayalam
+	4. arabic 
+	5. mandarion
+keep this option in the header for all the pages.
+when we click any one of those 
+the language should change for all the pages texts and every neccessary thing.
+implement otp generation via gmail and create login and sign in page accordingly for that.
+add add to cart and wishlist pages and button according to that. 
+
+
+Amazon Project
+
+Now propmt for Amazon website clone. Use mysql for the data base and java for the backed and nex js for the front end.
+Take the neccessary images, datas from the live website 
+
+Altering website ecommerce
+
+create two sub pages(in header there is link) for this html content and alter this html and styles to all devices 
+responsive give separate files such as index.html , styles.css and two other subpage
+
+new ecommerce prompt
+
+  give me perfect prompt create a modern ecommerce (hardware every thing from the shop) with neccaray sub pages and all only ui s with navigation 
+between pages and active , before and after css effect choose a color palette an stick to it for the whole website i need atleast 5-10 subpages pages . 
+should look modern. use only html and bootsrap. Styles should be modern but its structure should easy to be alterable. give as separate pages like index.
+html styles.css and each sub pages as indivial files.
+ think harder, take time and be senoir design.
+ I am going to go next stage with this ui for now and I am not going to using this so struture this as templates
+. there should be animations like aos and not only scroll animation add some other animations also. 
+pages that is a must login and sign up , wishlist , cart, profile page.
+ each product should be navigated to its detailed page and below the product details there should be related products.  
+For now we only create the template. Take images from picsum unique images and if you can take specific image from the web you should do that . 
+images should replacabel ,
+ like if you give a image that fits perfectly and if there is situation to remove that image and add my own image that shouldnt;
+ make any mis alignment ain t webpages .
+ Most importantly the whole webpage should be responsive to all king of devicess no overflow of any kind should happen . 
+Take specific fonts and texts should have different color codes one for the heading and there should be difference betweeen texts .
+ for the headings use different kinds of font in the same like. 
+You should pay with font sizes I don't prefer big bif fonts now give a proepr prompt.Choose a proper color styles .

@@ -1,0 +1,46 @@
+I can see your sketch clearly. Let me analyze it:
+
+**Your layout:**
+- **Heading** at the top center
+- **Left side:** Father details (text) + Father circle — on the LEFT half
+- **Right side:** Mother circle — on the RIGHT half, but **split vertically**: mother's circle is on top-right, with a second smaller circle below-right (the child/subject)
+- **Arrows** connect: Father → middle couple circles → child on bottom right
+- **Bottom:** timeline/wave bar
+- **The circles do NOT overlap** — they are separate, connected by arrow lines
+- **2 generations visible at once** — current gen on left, next gen on right, with arrows crossing between them
+
+This is a **horizontal flow** — left to right across the screen,
+ like a tree branching rightward. Let me rebuild the entire layout.Now I have a complete picture.
+ Let me rewrite the whole visual system to match the sketch exactly.Now create the new layout matching the sketch — horizontal flow,
+ father top-left, mother bottom-left, child top/bottom-right:Remove the now-unused FamilyCard file and update app/page.
+tsx:Good — FamilyCard is gone. Now repackage:Here's exactly what I built from your sketch:
+
+**New layout (matches your drawing precisely):**
+
+```
+┌────────────────────────────────────────────────────────────┐
+│                    ERA HEADING                             │
+│                                                            │
+│  [name]     ●Father ──────────────►  ●Father(next gen)    │
+│  [life]       │                          (preview)        │
+│  [title]      │ ↓ arrow down                              │
+│  [desc]       ▼                                           │
+│  [name]     ●Mother ──────────────►  ●Mother(next gen)    │
+│  [life/desc]  └─────────────────────►●Father(diagonal)    │
+│                                                           │
+│  ─────────────── TIMELINE ──────── PREV │ NEXT ─────────  │
+└────────────────────────────────────────────────────────────┘
+```
+
+- **Father** on top-left with full text details to its left
+- **Mother** on bottom-left with full text details to its left
+- **3 arrows drawn on canvas**: father→mother (vertical), father-left→father-right (horizontal), mother-left→mother-right + diagonal to next father
+- **Next generation previewed** on the right side (smaller circles, just name) — so you always see "current + incoming next"
+- **Circles never overlap** — they are fixed at separate positions
+- **Glow rings, pulsing waves, travelling dots** all work on each circle
+- **Timeline bar** at the bottom exactly like your HTML version
+
+To run: extract zip → `npm install` → `node scripts/generate-placeholders.js` → `npm run dev`
+
+
+ffmpeg -framerate 24 -i frame_%06d.png -c:v libx264 -pix_fmt yuv420p output.mp4

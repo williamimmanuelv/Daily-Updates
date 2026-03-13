@@ -1,0 +1,54 @@
+Create a prompt. My idea is to create YouTube channel called family tree. 
+The niche is we take a particular famous or influencing person and we track their lineage. 
+The video visuals should be father on the left and mother on the right.
+ Father's name his life time in brackets and what he is known for and his achievement same for the mother.
+ Father's details should be in the left of his profile image and mother's should be right of her's.
+ So the visual should be (from left in order) --> father's details, father'sprofileu image, mother's profile image, mother's details.
+ The video should be vertically scrolling and reveales the lineage.
+ At one at a time the view should be able to see two and a half generation, for  example grand father, father and son.
+ Even though the video is scrolling the spacing and pacing should be viewer friendly.
+ To connect or to demonstrate the lineage properly we need proper animation.
+For That I have a idea , the border of the profile image should glow initially and its waves should create a line or animation.
+That will be the arrow or lines that connects the families.
+That's it. 
+Even though there is going to be a lot of animation , keep one thing in mind viewers should be able to understand and should able to read the details properly.
+And video should look like we put lots of human efforts to it but not should be complicated to the viewers.
+I don't know how you are going to create this , with code or using other techs. 
+But listen , this will be my base video template.
+As experitment for now you can use a free images.
+But my first video will be Aegon the conquerer --> Aegon Targaryon aka jon snow.
+with the above niche also suggest other 20 niches and how I can be relevent in the youtube community.
+Also keep this thing in mind I am doing the to get the monetization money.
+So, don't allow me to banned or struck in the youtube regulations.
+
+
+
+```html
+My requirement is to create video for the youtube with high resolution.
+                      Using ffmpeg we can convert the frames to high resolution video.
+                      This is not the scrolling method I've wanted but it's ok and I have some corrections 
+                      to tell instead of father and mother in left and right , put them in up and down .
+                      Like this father details and father profile img on the top and down same for mother.
+                      The upside data which is father , its profile images border should glow and same for the mother image.
+                      the glowing waves should create a line and connect between the two.
+                      then only it should create a line which should navigate to their children.
+                      I don't want initials of the father or mother's I want image.
+                      So you'll be making room for that once you give code I'll be implementing image paths.
+                      first families image name should be familyNo1father and familyNo1mother .
+                      just like this should follow for the rest of the families.
+                      In your genarated code the lines are not correctly moving fix that properly.
+                      The font looks like its for the website , but we are create for youtube videos remember that.
+                      I liked the gold sparkling.
+                      Everything should be automated.
+                      Exept image create. Once you gave me the code I'll genarate images the put that in the assets section.
+                      Convert this whole thing to next js.
+```
+
+
+
+not the above one but in the first code which you gave family tree html , 
+It had a linage over view line in the bottom of the screen I like that alter that in to this . 
+Coming to the next js project I've done everthing instruction that you gave but its not creating 
+a video but its working as awebsite in there also the is a lot of empty spaces and a little was occupied by the content ,
+ viewers can't see properly now correct this make the details and profile bigger. The lines are not navigative properly its so important so correcct that .
+ give me step by step guide to how to run the project

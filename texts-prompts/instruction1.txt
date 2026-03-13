@@ -1,0 +1,47 @@
+This is a full Next.js project build. Let me scaffold the entire thing properly.
+Network is off — I'll create the complete Next.js project structure manually with all files.
+Now the core data file:
+Now the main canvas animation engine:
+Now the FamilyCard component:
+Now the main page with full orchestration:
+Now the FFmpeg export script for YouTube video generation:
+Now a placeholder image generator so the project runs without real images:Now zip it all up:
+Here's your complete Next.js project. Here's exactly what's inside and how to use it:
+
+---
+
+**Layout is now vertical — father on top, mother below:**
+- Father image → glowing gold ring pulses and emits wave ripples
+- Mother image → glowing silver-blue ring does the same
+- The glow waves flow into a bezier connector line (father bottom → mother top) with a travelling gold dot
+- Then a second connector line continues from mother bottom → next generation's father top
+- Every connector has an animated arrowhead at the end
+
+---
+
+**Getting started:**
+```bash
+unzip family-tree-nextjs.zip
+cd family-tree
+npm install
+node scripts/generate-placeholders.js   # creates temp SVG images
+npm run dev                              # → localhost:3000
+```
+
+**Adding your images** — drop them into `/public/assets/` with these names:
+```
+familyNo1father.jpg    familyNo1mother.jpg
+familyNo2father.jpg    familyNo2mother.jpg
+familyNo3father.jpg    familyNo3mother.jpg
+familyNo4father.jpg    (no mother for Jon Snow)
+```
+
+**To export to YouTube MP4:**
+```bash
+npm install puppeteer
+# install ffmpeg on your system
+node scripts/export-frames.js
+# → output/family-tree-video.mp4 (1920×1080, H.264, 20Mbps, YouTube-ready)
+```
+
+**To change the lineage** — edit only `lib/lineageData.ts`. Everything else is automatic.

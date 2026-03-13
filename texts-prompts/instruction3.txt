@@ -1,0 +1,39 @@
+The 404s mean the placeholder script didn't run yet, and the images are missing. Let me fix both issues right now.
+I can see multiple problems.
+ The export script has TypeScript syntax in a `.js` file (it'll crash), and the placeholder script needs to run on Windows paths correctly.
+ Let me fix everything properly.
+Now also add `data-gen-id` to the card so the frame script can detect generation count:
+Now repackage and create a clear step-by-step guide document:Here's the fixed project + a visual setup guide you can open in your browser.
+
+---
+
+**Right now, do exactly this in order:**
+
+**Terminal 1 (already running — leave it):**
+```
+npm run dev
+```
+
+**Open a second PowerShell window, navigate to the folder:**
+```powershell
+cd E:\newFolder\family-tree-new
+node scripts/generate-placeholders.js
+```
+You'll see `✓ Created familyNo1father.jpg` etc. — that fixes all the 404 errors immediately.
+
+**Then refresh `localhost:3000`** — the images will show as stylized silhouette placeholders.
+
+---
+
+**For video export — same second terminal:**
+```powershell
+node scripts/export-frames.js
+```
+This time it will print live progress like `Frame 45 / ~690 (6%)` so you can see exactly what's happening.
+ It takes 5–15 minutes to capture all frames, then FFmpeg assembles the MP4. The output goes to `output/family-tree-video.mp4`.
+
+**Key fixes in this version:**
+- The export script was broken (had TypeScript syntax inside a `.js` file) — fully rewritten in plain JS
+- Added a server-reachability check — it now tells you clearly if `npm run dev` isn't running instead of silently failing
+- Added live frame counter so you can see progress
+- Connector lines now track by stable ID so their draw-reveal animation doesn't reset on every render cycle.

@@ -1,0 +1,129 @@
+PS E:\newFolder\zipFiles\family-tree-nextjs (2)\family-tree> node scripts/generate-placeholders.js
+  ✓ Created familyNo1father.jpg
+  ✓ Created familyNo1mother.jpg
+  ✓ Created familyNo2father.jpg
+  ✓ Created familyNo2mother.jpg
+  ✓ Created familyNo3father.jpg
+  ✓ Created familyNo3mother.jpg
+
+✅ Done! Created 7 placeholder images in: public/assets/
+
+📸 TO ADD REAL IMAGES:
+   Replace these files with your actual .jpg images (same filenames):
+   • public/assets/familyNo1father.jpg  ←  Aegon I
+   • public/assets/familyNo1mother.jpg  ←  Visenya
+   • public/assets/familyNo2father.jpg  ←  Maekar
+   • public/assets/familyNo2mother.jpg  ←  Dyanna
+   • public/assets/familyNo3father.jpg  ←  Rhaegar
+   • public/assets/familyNo3mother.jpg  ←  Lyanna
+   • public/assets/familyNo4father.jpg  ←  Jon Snow
+
+   Images should be square (e.g. 400×400px or 800×800px), JPEG or PNG.
+   They will be auto-cropped to a circle in the UI.
+PS E:\newFolder\zipFiles\family-tree-nextjs (2)\family-tree> node scripts/export-frames.js
+node:internal/modules/cjs/loader:1210
+  throw err;
+  ^
+
+Error: Cannot find module 'puppeteer'
+Require stack:
+- E:\newFolder\zipFiles\family-tree-nextjs (2)\family-tree\scripts\export-frames.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (E:\newFolder\zipFiles\family-tree-nextjs (2)\family-tree\scripts\export-frames.js:25:18)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'E:\\newFolder\\zipFiles\\family-tree-nextjs (2)\\family-tree\\scripts\\export-frames.js'
+  ]
+
+Node.js v20.20.1
+PS E:\newFolder\zipFiles\family-tree-nextjs (2)\family-tree> npm install puppeteer
+
+added 93 packages, and audited 199 packages in 25s
+
+31 packages are looking for funding
+  run `npm fund` for details
+
+1 critical severity vulnerability
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+PS E:\newFolder\zipFiles\family-tree-nextjs (2)\family-tree> node scripts/export-frames.js
+╔═══════════════════════════════════════════════╗
+║   Family Tree — YouTube Video Exporter        ║
+╚═══════════════════════════════════════════════╝
+
+🌐 Launching headless browser (1920×1080)...
+📄 Loading page...
+✅ Detected 4 generations
+📊 Total frames to capture: ~870 (29s)
+
+
+  [INTRO] capturing 3s (90 frames)...
+    Frame 90 / ~870  (10%)  saved: frame_000090.png
+  [CLICK] Starting lineage...
+
+  [GEN 1/4] capturing 6s (180 frames)...
+    Frame 270 / ~870  (31%)  saved: frame_000270.png
+  [GEN 2/4] capturing 6s (180 frames)...
+    Frame 450 / ~870  (52%)  saved: frame_000450.png
+  [GEN 3/4] capturing 6s (180 frames)...
+    Frame 630 / ~870  (72%)  saved: frame_000630.png
+  [GEN 4/4] capturing 6s (180 frames)...
+    Frame 810 / ~870  (93%)  saved: frame_000810.png
+  [OUTRO] capturing 2s (60 frames)...
+    Frame 870 / ~870  (100%)  saved: frame_000870.png
+
+✅ Captured 870 frames  →  E:\newFolder\zipFiles\family-tree-nextjs (2)\family-tree\output\frames
+
+🎬 Running FFmpeg...
+   ffmpeg -y -framerate 30 -i E:/newFolder/zipFiles/family-tree-nextjs (2)/family-tree/output/frames/frame_%06d.png -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -vf scale=1920:1080 -movflags +faststart -b:v 20M -maxrate 25M -bufsize 40M E:/newFolder/zipFiles/family-tree-nextjs (2)/family-tree/output/family-tree-video.mp4
+
+ffmpeg version 7.1.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 14.2.0 (Rev1, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[in#0 @ 000002630df20380] Error opening input: No such file or directory
+Error opening input file E:/newFolder/zipFiles/family-tree-nextjs.
+Error opening input files: No such file or directory
+
+❌ Fatal error: FFmpeg exited with code 4294967294
+PS E:\newFolder\zipFiles\family-tree-nextjs (2)\family-tree> ^C
+PS E:\newFolder\zipFiles\family-tree-nextjs (2)\family-tree> node scripts/export-frames.js
+
+
+
+
+
+this error occur a but frames are created . 
+I have some alteration to do in the website .
+Create a home for this website. 
+We'll be having two options in the home page , 
+one is for creating video and another one is for the preview of the view of the video.
+While creating the video there should be options for the theme of the video.
+For example, 1,history. 2, royal. 3,fantasy.4.modern 5.classic etc.
+Based on this themes the animation , lines fonts , border of the profile pic should change.
+Each and every theme should have its own styles .
+After this selecting an option section, itshould ask for json file 
+(You should tell me perfect json data format for this segment) with drag and drop option and select your option.
+In that json file , we'll be have the details of the father , mother and their profile image location and name.
+After uploading the json file there should be create now button.
+If there is an error in json structure or any other previous section it show below this sections.
+If every thing is success then we will be have video preview section after clicking preview btn.
+If Like the video then there should a generate video button which should generate the video.
+If I didn't like there also should be a button which should navigate use to the start of the section.

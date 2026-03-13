@@ -1,0 +1,376 @@
+You are a senior FAANG-level frontend architect and UX engineer.
+
+You have 15+ years of experience designing and building world-class ecommerce websites comparable to Stripe, Apple, Shopify, and Amazon.
+
+Your task is to design and implement a **production-grade ecommerce homepage** using **HTML5, Tailwind CSS, and minimal vanilla JavaScript**.
+
+This homepage is for a **professional hardware tools ecommerce store**.
+
+The design must look **premium, modern, and trustworthy** — not like a template or beginner project.
+
+The code must be structured so that it can later be migrated easily to **Next.js component architecture**.
+
+You must think deeply before generating code.
+
+This page must look like something a professional design agency would charge **$2000+** to build.
+
+----------------------------------------------------
+
+BRAND
+
+Brand Name:
+ForgeCraft Hardware
+
+Tagline:
+"Tools That Build the Future"
+
+Brand Personality:
+
+industrial
+strong
+reliable
+modern
+professional
+
+----------------------------------------------------
+
+DESIGN PHILOSOPHY
+
+The page must follow these principles:
+
+clarity
+visual hierarchy
+conversion focused
+trust building
+fast scanning
+mobile-first design
+minimal but powerful animations
+
+The design must feel like a combination of:
+
+Apple.com
+Stripe.com
+Home Depot
+Industrial Supply Websites
+
+----------------------------------------------------
+
+COLOR SYSTEM
+
+Primary
+#1E3A8A
+
+Secondary
+#F59E0B
+
+Neutral Dark
+#111827
+
+Neutral Gray
+#6B7280
+
+Light Background
+#F9FAFB
+
+Card Background
+#FFFFFF
+
+Borders
+#E5E7EB
+
+Use a consistent color system across the entire site.
+
+----------------------------------------------------
+
+TYPOGRAPHY
+
+Use modern readable fonts.
+
+Headings:
+bold
+clear
+large hierarchy
+
+Body:
+clean
+neutral
+high readability
+
+----------------------------------------------------
+
+LOGO
+
+Create a **custom CSS logo**.
+
+No image.
+
+The logo should combine:
+
+ForgeCraft
+and a small hammer or gear symbol made using CSS pseudo elements.
+
+----------------------------------------------------
+
+LAYOUT SYSTEM
+
+Use a consistent layout container:
+
+max-w-7xl mx-auto px-6 lg:px-8
+
+Spacing must be consistent using Tailwind spacing scale.
+
+Every section must feel balanced and intentional.
+
+----------------------------------------------------
+
+IMAGE SOURCES
+
+Use placeholder images from:
+
+https://picsum.photos
+
+Example usage:
+
+tools
+construction
+workshop
+drill
+hammer
+industrial
+
+Example:
+
+https://picsum.photos/800/600?random=tool
+
+Images must look relevant to hardware tools.
+
+----------------------------------------------------
+
+ICON SYSTEM
+
+Use ONE consistent icon system:
+
+Heroicons
+
+Do NOT mix icon sets.
+
+----------------------------------------------------
+
+ANIMATION SYSTEM
+
+Implement a lightweight animation system similar to AOS.
+
+Animations must include:
+
+fade-up
+fade-in
+slide-left
+slide-right
+zoom-in
+stagger animations for cards
+
+Use:
+
+IntersectionObserver
+CSS transform
+opacity transitions
+
+Animations must trigger when elements enter viewport.
+
+Do not over animate.
+
+Animations must feel professional.
+
+----------------------------------------------------
+
+INTERACTION DESIGN
+
+Include micro-interactions:
+
+button hover glow
+card elevation hover
+image zoom hover
+underline slide effect on links
+icon motion on hover
+
+Use:
+
+transform
+scale
+shadow
+before/after pseudo elements
+
+----------------------------------------------------
+
+RESPONSIVE REQUIREMENTS
+
+Must work perfectly on:
+
+mobile
+tablet
+laptop
+desktop
+ultra wide screens
+
+Breakpoints must be implemented properly using Tailwind utilities.
+
+Mobile navigation must become a slide-in drawer.
+
+----------------------------------------------------
+
+HOMEPAGE STRUCTURE
+
+Build a structured homepage with **25+ meaningful sections**.
+
+Required sections include:
+
+Announcement Bar
+Navigation Header
+Mega Menu Navigation
+Search Bar with Category Filter
+Hero Marketing Section
+Featured Categories Grid
+Featured Tools Carousel
+Flash Deals Section
+Popular Tools Grid
+Brand Trust Indicators
+Professional Brand Logos
+Product Cards Grid
+DIY Project Inspiration Section
+Top Rated Tools
+Bundle Offers Section
+Interactive Tool Finder
+Why Choose ForgeCraft
+Customer Testimonials
+Workshop Video Section
+Blog Preview Section
+Buying Guides Section
+Promotional Banner
+Newsletter Signup
+Instagram Style Gallery
+Customer Support CTA
+Store Locations
+FAQ Accordion
+Payment Security Logos
+Final Conversion Section
+Advanced Multi Column Footer
+
+----------------------------------------------------
+
+PRODUCT CARD DESIGN
+
+Each product card must contain:
+
+product image
+title
+price
+rating stars
+wishlist icon
+quick add button
+discount badge
+hover overlay
+
+Cards must animate slightly on hover.
+
+----------------------------------------------------
+
+CAROUSEL REQUIREMENTS
+
+Create at least two carousels.
+
+Examples:
+
+Featured tools
+Flash deals
+
+Carousel must support:
+
+smooth scroll
+navigation buttons
+touch swipe
+responsive cards
+
+----------------------------------------------------
+
+NAVIGATION HEADER
+
+The header must include:
+
+logo
+navigation links
+mega menu dropdown
+search bar
+account icon
+wishlist icon
+cart icon
+mobile menu button
+
+Sticky header behavior when scrolling.
+
+----------------------------------------------------
+
+FOOTER DESIGN
+
+Footer must contain:
+
+company info
+customer support links
+categories
+newsletter
+social icons
+payment methods
+copyright
+
+----------------------------------------------------
+
+ACCESSIBILITY
+
+Use semantic HTML:
+
+header
+nav
+main
+section
+article
+footer
+
+Include aria labels where appropriate.
+
+----------------------------------------------------
+
+PERFORMANCE
+
+Images must use:
+
+loading="lazy"
+
+Avoid unnecessary JS libraries.
+
+Keep the page optimized.
+
+----------------------------------------------------
+
+CODE QUALITY
+
+The code must be clean and structured.
+
+Each section must be clearly commented.
+
+Example:
+
+<!-- HERO SECTION START -->
+<!-- HERO SECTION END -->
+
+The code must be easy to convert into React components later.
+
+----------------------------------------------------
+
+FINAL OUTPUT
+
+Return ONLY the full HTML file.
+
+Do not explain anything.
+
+Do not summarize.
+
+Only output the complete code.

@@ -1,0 +1,11 @@
+git
+node
+vs code 
+ffmpeg
+
+fav installation
+- blender
+- davinci resolve
+
+tools for local disk partition
+- MiniTool ShadowMaker

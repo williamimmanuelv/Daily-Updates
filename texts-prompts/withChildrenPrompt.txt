@@ -1,0 +1,77 @@
+I have so many alterations to tell. 
+Take away the logo in the left top (family tree).
+In the right top instead of every name carries a story , I want it to be the conqueror --> jon snow.
+ The titles which changes for every generation( the conquest , the dragon kings etc should be bold and large so that viewers can see and identify). 
+This whole video looks like some website design and we are not here to build a website , alter properly to look like a informative video.
+ The left side of the father and mother details are cutdown its not visible. 
+In the bottom there is this generation of 1 of 3 etc and the lineage  line above the profiles and below the (the conquest - 1 ac ) section.
+ For the preview of the video prev and next button are ok but for the video its unneccessary so remove it for the video. 
+Reduce the profile and line length which connects the father and son size,  so that the that there won't be any overflow or disappearence of the details section.
+ Most important thing is when I rendered the final video it has run time of 31 seconds but the video is over in 5 seconds. 
+There is no scrolling it just glitches and changes the next genaration in 5 seconds and stops at the last one and stays that way for the rest of the video. 
+From the first instruction I've been telling you that this is for the you tube and its a scrolling video that viewers will see and understand them selfes, but the video that you gave doesn't even come 1% percent of that. 
+Analyse how scrolling video of other you tube videos and alter this once and final properly.
+ There is line going on mother to son's wife is really true , I don't think so , cut that down
+. I'll give you an image only about profile and details structure and how to place the other childern among the heir lineage holder.
+ The animation should start from the father and mother with glowing borders , once when the line of them connected then thier childrens profile should be appear slowly with small size of profile image with only their name .
+ After that only the lineage holder's name and their details should appear and rest of the childrens profile image and name should disappear slowly just how they were appeared before.
+ When this happened the heirs lineage holder profile and detail should reach the size of theirs father and then their wife profile and details should appear ( in the details of the wife add their father and mother names).
+This all should be scrolling , but remember the viewers must know connections so keep it slow .
+
+
+after --> family-tree-version-3
+
+The animation looks glitchy. Increase the frame rate and increase the quality to 1000 times from what we have now.
+place the lineage line (o---o---) to below the  heading title which shows the conquest . 1 ac kind of a thing.
+Coming to the video structure the childrens line are overlaping on the father and mother details , 
+move them little bit right side so that the details will readable.
+When the childrens lines and profiles are appeared the whole thing with father and mother details are scrolled I don't want that.
+There is no linkage line between parents and children.There should be.
+I want the video to be like this , in order , animation and structure -->
+first intro - 
+which has the information about the video , title , description and every thing.
+Once it appears fully , after 2 seconds it should start to scroll from left to right and reveal the first generations animation and stop at there.
+After the father and mother animation is completed then a line forms from the middle of the line which connected the father and mother,
+it forms lines which which then connects and creates the childrens profile.
+After the childrens animation is completed the animation shouldn't scroll or move anywhere.
+But except the chosen heir of the linage . Every other children should be disappeared as they appeared slowly.
+Then the chosen onces profile should animate into the nearly size of the his father's profile , then only his details should appear.
+(Keep this one thing in your mind don't allow any of the profiles or details of the profiles or the line of the profiles to overlap with each other)
+After the appearence of the details of the son , then only the animation should start to scroll but
+ remember the father,mother's profile and details scrolled away speedly.
+It should move or scroll to left but it shouldn't disappear all of a sudden or scrolled to the left all of a sudden.
+After the appearence of the 1 generation son's details and his profile the line should connect to his wife just like his parents line connection animation.
+(The line will go from the bottom of the profile to create his wife profile).
+By this time the whole picture wouldn't fit the screen so the scrolling starts focusing only on the current generation.
+(then this animation format is continues for the rest of the video)
+
+
+give me a separate json file.
+I don't want a sample one .
+I want veryfied family list from Aegon the conqueror to snow each and every children should be included.
+Remember I want fact checked one.
+
+
+
+Some more alterations.
+When we change the theme in the starting of the video creation,
+the profile images border design structure and animation of its should also change to different from each other.
+After the json file upload , the system should analyse the file and there should be a image upload grid.
+When we upload the image in each one of them the image name should be changed to that specific section.
+For example, with placeholder, the grid should look like this -->
+
+	|father1|mother1|
+		--> |child1|child2|child3|etc|
+	|father2|mother2|
+		--> |child1|child2|etc|
+	|father2|mother2|
+		--> |child1|child2|etc|
+	|father2|mother2|
+		--> |child1|child2|etc|
+
+When we drag and drop the photo it should rename the image . Then only we should be allowed to move to the next step.
+
+
+
+After family-tree-new-version-6-image-correction
+

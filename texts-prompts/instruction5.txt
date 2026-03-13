@@ -1,0 +1,50 @@
+Let me read all the current files first before building the full home system.Good.
+ Now I have a full picture.
+ This is a big build — 
+I'll create the complete multi-page app with routing,
+themes system, JSON upload, preview, and fix the FFmpeg spaces-in-path bug.Now create the app state store:
+Now build the Home page —
+theme picker + JSON upload + validation:Now build the full Preview page with theme-aware LineagePage + generate button:Update canvas engine to accept theme colors:
+Now update particle and arrow colors to use theme:Now update ring colors to use theme:
+Also update background and arrow colors to use theme:
+Now also thread theme into drawArrow for themed arrow colors:
+Now set up the Next.js pages and layout:
+Fix the FFmpeg spaces-in-path bug in the export script:
+Now package everything:All 20 files present.
+Now create the JSON sample file users need:
+Here's the complete updated project. Here's everything that was built and fixed:
+
+---
+
+## What's New
+
+**🏠 Home Page (`/`)** — 3-step flow:
+- **Step 1 — Theme Picker:** 5 themes as clickable cards, each with its own background, fonts, colors, glow styles.
+ Selecting a theme instantly applies to everything
+- **Step 2 — JSON Upload:** Drag & drop or click-to-browse. Shows the sample JSON format (toggle button).
+ Validates the file instantly and shows exactly which fields are wrong if anything fails
+- **Step 3 — Create Now:** Disabled until JSON is valid. Shows generation count + selected theme before you click
+
+**👁️ Preview Page (`/preview`)** — Full lineage animation with:
+- Fixed top bar: **← BACK** | theme name | **✗ START OVER** | **🎬 GENERATE VIDEO**
+- Every theme changes fonts, glow ring colors, arrow colors, particles, backgrounds
+- "Generate Video" shows the exact terminal command to run
+
+**🎨 5 Themes:**
+| Theme | Feel | Fonts |
+|-------|------|-------|
+| ⚔️ History | Sepia, gold | Cinzel + Cormorant |
+| 👑 Royal | Deep navy, purple | Playfair Display + EB Garamond |
+| 🐉 Fantasy | Arcane teal | Uncial Antiqua + Philosopher |
+| 🏙️ Modern | Sharp white/black | Inter |
+| 🏛️ Classic | Warm ivory | Libre Baskerville + Lora |
+
+**🔧 FFmpeg Fix:** The `shell: false` flag is now set, so Node passes each argument separately
+ — spaces in Windows paths like `family-tree-nextjs (2)` no longer break FFmpeg.
+
+---
+
+## JSON Format (use `sample-lineage.json` as your template)
+
+Each family needs: `id`, `era`, `father`, `mother` (or `null`). Each person needs: `name`, `life`, `title`, `desc`, `image` (filename in `public/assets/`). 
+Set `"isSubject": true` on the last entry.

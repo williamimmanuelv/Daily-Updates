@@ -1,0 +1,330 @@
+You are a senior frontend engineer and UX designer with 15+ years of experience building production-grade ecommerce websites.
+
+Your task is to create a COMPLETE, PROFESSIONAL, PRODUCTION-READY HTML homepage for a Hardware Store Ecommerce website using Tailwind CSS.
+
+This is NOT a simple demo page. The output must look like a real commercial website worth at least $1000+ in design and development.
+
+STRICT REQUIREMENTS
+
+The page must be written in:
+- HTML5
+- Tailwind CSS (CDN allowed)
+- Vanilla JavaScript (minimal where needed)
+
+The design must be:
+- extremely clean
+- professional
+- highly structured
+- scalable for future migration to Next.js
+
+Code quality must follow best practices so components can later be easily converted into React/Next.js components.
+
+-----------------------------------
+
+WEBSITE BRAND
+
+Create a fictional hardware ecommerce brand.
+
+Brand name: **ForgeCraft Hardware**
+
+Tagline:
+"Built Strong. Built Right."
+
+Logo:
+Create a **pure CSS styled logo** using typography and shapes (no images).
+
+Example concept:
+ForgeCraft with a small hammer or gear created using CSS pseudo elements.
+
+-----------------------------------
+
+COLOR PALETTE (STRICT)
+
+Primary: #1E3A8A (Deep Industrial Blue)
+Secondary: #F59E0B (Construction Amber)
+Accent: #374151 (Steel Gray)
+Background: #F9FAFB
+Text: #111827
+
+Buttons:
+Primary Button → Amber
+Hover → Darker Amber
+
+-----------------------------------
+
+ICONS
+
+Use a **single consistent icon library** across the site.
+
+Allowed:
+Heroicons (preferred)
+OR
+Lucide icons
+
+Do NOT mix icon libraries.
+
+-----------------------------------
+
+IMAGES
+
+All images must use:
+
+https://picsum.photos/
+
+Use realistic hardware-related placeholders such as:
+
+tools
+construction
+workshop
+drill
+hammer
+industrial
+
+Example:
+https://picsum.photos/600/400?random=tool
+
+-----------------------------------
+
+RESPONSIVE DESIGN
+
+The site must be PERFECTLY responsive.
+
+Design must support:
+
+Mobile (320px+)
+Tablet (768px+)
+Laptop (1024px+)
+Desktop (1280px+)
+Large Screens (1536px+)
+
+Use Tailwind responsive utilities properly.
+
+Mobile-first design is required.
+
+-----------------------------------
+
+ANIMATIONS
+
+Animations must be implemented using:
+
+Intersection Observer
+CSS transitions
+transform
+opacity
+scale
+translate
+
+Create a custom animation system similar to AOS but lighter.
+
+Animations required:
+
+fade-up
+fade-in
+slide-left
+slide-right
+zoom-in
+stagger animation for cards
+
+Animations should trigger when elements enter viewport.
+
+-----------------------------------
+
+INTERACTIONS
+
+Use hover effects including:
+
+hover:scale
+hover:shadow-xl
+before/after underline effects
+card lift effects
+button ripple or glow
+image zoom hover
+
+-----------------------------------
+
+LAYOUT STRUCTURE
+
+Use max width container:
+
+max-w-7xl mx-auto px-4 md:px-8
+
+Spacing must be consistent.
+
+Use Tailwind grid and flex layouts.
+
+-----------------------------------
+
+REQUIRED HOMEPAGE SECTIONS
+
+Create **20 to 30 sections minimum**.
+
+Sections must be meaningful, not filler.
+
+Required structure:
+
+1. Top Announcement Bar
+2. Main Navigation Header
+3. Mega Menu Dropdown
+4. Search Bar with Category Filter
+5. Hero Section (large marketing banner)
+6. Featured Categories Grid
+7. Flash Deals Carousel
+8. Popular Tools Section
+9. Trust Indicators
+10. Brand Logos Strip
+11. Product Card Grid
+12. Tool Bundles Section
+13. DIY Project Inspiration
+14. Best Selling Tools
+15. Interactive Tool Finder
+16. Why Choose Us
+17. Testimonials
+18. Featured Workshop Video
+19. Blog Preview Section
+20. Hardware Buying Guide
+21. Large Promotional Banner
+22. Newsletter Signup
+23. Instagram Style Gallery
+24. Customer Support CTA
+25. Store Locations
+26. FAQ Accordion
+27. Security & Payment Logos
+28. Final Conversion CTA
+29. Footer Navigation
+30. Deep Footer
+
+-----------------------------------
+
+PRODUCT CARD DESIGN
+
+Each product card must include:
+
+image
+title
+price
+rating
+quick add button
+wishlist icon
+hover overlay
+discount badge
+
+Cards must animate on hover.
+
+-----------------------------------
+
+CAROUSEL REQUIREMENTS
+
+Create at least 2 carousels.
+
+Examples:
+Featured Tools
+Flash Deals
+
+Must include:
+
+scroll buttons
+touch swipe support
+smooth scrolling
+
+-----------------------------------
+
+NAVIGATION MENU
+
+Header must contain:
+
+logo
+search bar
+categories dropdown
+account
+wishlist
+cart
+mobile hamburger menu
+
+Mobile menu must be a sliding drawer.
+
+-----------------------------------
+
+FOOTER STRUCTURE
+
+Footer must contain:
+
+About
+Customer Service
+Quick Links
+Top Categories
+Social Media
+Newsletter
+Payment Icons
+Copyright
+
+-----------------------------------
+
+ACCESSIBILITY
+
+Use semantic HTML:
+
+header
+nav
+main
+section
+article
+footer
+
+Use aria labels where needed.
+
+-----------------------------------
+
+PERFORMANCE
+
+Avoid unnecessary JS libraries.
+
+Use efficient animations.
+
+Images should use loading="lazy".
+
+-----------------------------------
+
+CODE QUALITY
+
+Structure the HTML clearly.
+
+Comment each section clearly.
+
+Example:
+
+<!-- HERO SECTION START -->
+
+-----------------------------------
+
+FINAL REQUIREMENTS
+
+The code must be:
+
+- clean
+- production ready
+- visually balanced
+- realistic ecommerce design
+- easily convertible to React components
+
+Avoid random styles or messy layouts.
+
+Think like a **senior frontend engineer building a real ecommerce homepage**.
+
+The final page should feel like a mix of:
+
+Home Depot
+Lowe’s
+Amazon Tools
+Industrial Supply Stores
+
+-----------------------------------
+
+OUTPUT
+
+Return ONLY the full HTML file.
+
+Do not explain anything.
+
+Do not summarize.
+
+Only output the code.

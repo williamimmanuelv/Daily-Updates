@@ -1,0 +1,21 @@
+in java api connection, there is a
+
+application class
+controller class
+entity class 
+repository class
+service class
+
+application.properties
+
+pom.xml
+
+what does these each files do and there is a @PostMapping('') in controller class.
+
+How can I add @GetMapping and delete,put,update --> how can I perform rest operation?
+
+When I do this (rest operations --> get,post,put,delete and update) what are all the class that will need alteration?
+
+Explain the connections that go on between these class.
+
+Explain about security concerns and how can we expect threads?

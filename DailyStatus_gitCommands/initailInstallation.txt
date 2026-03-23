@@ -1,7 +1,11 @@
 git
 node
+mysql
 vs code 
 ffmpeg
+xampp
+vlc player
+postman
 
 fav installation
 - blender
